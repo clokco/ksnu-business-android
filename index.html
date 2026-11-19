@@ -6,6 +6,18 @@
   <meta name="theme-color" content="#0b162c" />
   <title>KSNU 경영학부 · Android</title>
   <!-- PC 버전: ../pc/ -->
+  <script>
+    (function () {
+      var path = location.pathname;
+      if (!/\.html?$/i.test(path) && !/\/$/.test(path)) {
+        location.replace(path + '/' + location.search + location.hash);
+        return;
+      }
+      var base = path.replace(/[^\/]*$/, '');
+      if (!base) base = './';
+      document.write('<base href="' + base + '">');
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;600;700;800&family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet" />
@@ -23,8 +35,7 @@
     <a class="pc-link" href="https://clokco.github.io/ksnu-business/" target="_blank" rel="noopener noreferrer">PC</a>
   </header>
 
-  <section class="hero-compact">
-    <img class="hero-thumb" src="../pc/hero.jpg" alt="" />
+  <section class="hero-compact" aria-label="히어로">
     <div class="hero-copy">
       <h1>글로컬 비즈니스<br /><em>리더</em>의 시작</h1>
       <p>5대 전공 · MCD · 등록금 165.9만</p>
